@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/gif" href="quinceIcon.gif" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quince Planet</title>
+
+  
+  <!-- lootie -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.4/lottie_svg.min.js"></script>
+  <!-- Babylon.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@babylonjs/havok@1.3.0/lib/umd/HavokPhysics_umd.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script> -->
+
+  <!-- fabric -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.min.js"></script> -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="module" crossorigin src="assets/index-1eaa0630.js"></script>
+  <link rel="stylesheet" href="assets/index-f649ff81.css">
+</head>
+
+<body>
+
+  <div id="mainContainer">
+
+    <!-- LOADING -->
+    <div id="customLoadingScreenDiv">
+      <div id="lottieWraper"></div>
+      <div id="loadingPercentages">0%</div>
+    </div>
+
+    <!-- WORK IN PROGRESS -->
+    <div id="workInProgress" style="background-image: url(images/underConstruction.png)"></div>
+
+    <!-- BABYLON CANVAS -->
+    <canvas id="renderCanvas"></canvas>
+
+    <!-- START GAME -->
+    <div id="startGameBackground">
+      <div id="startGameContainer">CLICK TO<br>START DRIVING!</div>
+    </div>
+
+    <!-- MOBILE CONTROLS -->
+    <div id="controls">
+      <div id="controlsLeftRigh">
+        <div id="left">
+          <i class="fa fa-angle-left"></i>
+        </div>
+        <div id="right">
+          <i class="fa fa-angle-right"></i>
+        </div>
+      </div>
+      <div id="controlsForwBack">
+        <div id="forward">
+          <i class="fa fa-angle-up"></i>
+        </div>
+        <div id="brake">
+          Brake
+        </div>
+        <div id="backward">
+          <i class="fa fa-angle-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSTROL INSTRUCTIONS & CAMERA / SOUND -->
+    <div id="downControlsContainer">
+      <div class="downControlsFirstContainer">
+        <div class="firstRowDownControlsFirst">
+          <div class="downControlButton" id="downControlButtonW">W</div>
+        </div>
+        <div class="secondRowDownControlsFirst">
+          <div class="buttonHolder">
+            <div class="downControlButton" id="downControlButtonA">A</div>
+          </div>
+          <div class="buttonHolder">
+            <div class="downControlButton" id="downControlButtonS">S</div>
+          </div>
+          <div class="buttonHolder">
+            <div class="downControlButton" id="downControlButtonD">D</div>
+          </div>
+        </div>
+      </div>
+      <div class="downControlsSecondContainer">
+        <div class="firstRowDownControlsSecond">
+        </div>
+        <div class="secondRowDownControlsSecond">
+          <div id="downControlButtonSpace">Spacebar / Brake</div>
+        </div>
+      </div>
+      <div class="downControlsThirdContainer">
+        <div class="firstRowDownControlsThird">
+        </div>
+        <div class="secondRowDownControlsThird">
+          <div class="buttonHolder">
+            <div class="downControlButtonSoundCam" id="downControlButtonSound"
+              style="background-image: url(images/image7.png)"></div>
+          </div>
+          <div class="buttonHolder">
+            <div class="downControlButtonSoundCam" id="downControlButtonCamera"
+              style="background-image: url(images/image8.png)">
+              <div id="cameraNumberDisplay">1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- COLOR PICKER -->
+    <div id="colorPickerPopUpContainerBackground"></div>
+    <!-- color change pop up -->
+    <div id="colorPickerPopUpContainer">
+      <h1>Paint Your Yugo</h1>
+      <!-- <div
+        class="color-picker-containers"
+        id="colorPickerCarContainer"
+      ></div> -->
+      <div id="colorContainer">
+        <h3>Pick color</h3>
+        <div id="colorsDivsContainer"></div>
+      </div>
+
+      <div id="logoMainContainer">
+        <!-- upload logo -->
+        <div id="uploadLogoButtonContainer">
+          <form class="upload" id="upload" style="float: left">
+            <label class="upload-button" for="file-upload" style="display: flex">
+              <h5>Upload Logo</h5>
+            </label>
+            <input id="file-upload" type="file" name="uploadFile" accept="image/*" required style="display: none" />
+          </form>
+        </div>
+        <div style="float:right; width: 100%; margin-top: 10px;">
+          <h3>Or pick one</h3>
+        </div>
+        <div id="logoHolder">
+          <div class="logoContainer" style="background-image: url(images/image6.png)"></div>
+          <div class="logoContainer" style="background-image: url(images/image1.png)"></div>
+          <div class="logoContainer" style="background-image: url(images/image5.png)"></div>
+          <div class="logoContainer" style="background-image: url(images/image4.png)"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FPS -->
+    <p id='fps'
+      style="position: absolute; top: 300px; left: 50px; font-size: 20px; color: rgb(255, 255, 255); z-index: 1000;">
+      1111</p>
+
+    <!-- FABRIC CANVAS -->
+    <canvas id="paintCanvas" class="paintCanvas"
+      style="position: absolute; top: 300px; right: 50px; z-index: 1000; display: none;"></canvas>
+
+  </div>
+
+  
+
+</body>
+
+</html>
