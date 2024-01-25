@@ -1,28 +1,5 @@
 {
-    "animations": [
-        {"name": "bow_1"},
-        {"name": "facial_Idle_1"},
-        {"name": "facial_talking_1"},
-        {"name": "idle_1"},
-        {"name": "idle_2"},
-        {"name": "idle_3"},
-        {"name": "idle_4"},
-        {"name": "joy_jump_1"},
-        {"name": "listening_1"},
-        {"name": "no_1"},
-        {"name": "point_down_left_1"},
-        {"name": "point_down_right_1"},
-        {"name": "point_left_1"},
-        {"name": "point_right_1"},
-        {"name": "point_up_1"},
-        {"name": "point_up_left_1"},
-        {"name": "point_up_right_1"},
-        {"name": "talking_1"},
-        {"name": "talking_2"},
-        {"name": "talking_3"},
-        {"name": "talking_4"},
-        {"name": "wave_1"},
-        {"name": "yes_1"},
-        {"name": "yes_2"}
-      ]
+    "first": "Developed By",
+    "second": "Veljko",
+    "third": "https://www.linkedin.com/in/velibor-markovic-431378144/"
 }
